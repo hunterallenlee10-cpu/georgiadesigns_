@@ -42,6 +42,15 @@ All content lives in typed files under `data/`:
 - **Site settings** (Instagram, contact email, Venmo / PayPal, promo bar): `data/site.ts` and the env vars below.
 - **Pricing rules:** `lib/pricing.ts` (one function, unit tested in `lib/pricing.test.ts`).
 
+## Logo
+
+Georgia's logo is the site's only brand mark. The original lives at `assets/brand/georgia-designs-logo.jpg`. To update it, replace that file and run `node scripts/make-icons.mjs`, which rebuilds:
+
+- `public/images/logo.png`: the full logo (header, footer, share image)
+- `public/images/logo-gd.png`: the GD monogram alone (hero seal)
+- `app/icon.png`: browser tab icon (GD monogram, since the full logo is unreadable at tab size)
+- `app/apple-icon.png`, `public/icon-192.png`, `public/icon-512.png`: home screen and app icons (full logo)
+
 ## Photos
 
 > These photos belong to Georgia Designs and are licensed for this site only. Don't reuse them in other projects or templates.
@@ -73,7 +82,7 @@ Category notes vs. the original guide: **03** (pastel stone beads in a palm) is 
 
 21 photos cut from Instagram grid screenshots before the originals arrived. They still fill spots the zip doesn't cover (the 2024 bazaar flyer, the market table, the UNC game day photo, the "styled by you" grid, shop-by-finish tiles). They're lower resolution; swap or remove them once Georgia sends originals for those shots. `npm run images` rescans this folder.
 
-**Still missing:** `logo.png` (her GD badge), `georgia.jpg` (optional portrait), and `archive-1.jpg` to `archive-4.jpg` (older gemstone and tassel pieces for the About timeline).
+**Still missing:** `georgia.jpg` (optional portrait) and `archive-1.jpg` to `archive-4.jpg` (older gemstone and tassel pieces for the About timeline).
 
 ## How the live site updates
 
@@ -115,8 +124,8 @@ There's no checkout in v1 (Georgia takes Venmo & PayPal). The hook is marked `[H
 Nothing below was invented as fact; each item is a draft or placeholder that needs Georgia's sign-off. Search the code for `CONFIRM` to find them.
 
 **Brand assets & permissions**
-- [ ] Logo file (`public/images/logo.png`). Until then the site uses a plain "gd" type badge, not a redrawn logo
-- [ ] Favicon / app icons: `app/icon.svg` is a placeholder "gd" monogram. Replace with her GD mark, then run `node scripts/make-icons.mjs`
+- [x] Logo file (her aqua GD logo is in place)
+- [x] Favicon / app icons (built from her logo)
 - [x] Permission to use her Instagram photos on this site (confirmed)
 - [ ] Original files for the 21 screenshot crops still in `public/images/` (bazaar flyer, market table, game day, coffee shots)
 - [ ] Photo-to-product matches in `data/products.ts` (`photo` / `wristPhoto`), e.g. which photo shows the Mixed Metals single

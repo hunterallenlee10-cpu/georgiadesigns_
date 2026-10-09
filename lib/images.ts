@@ -18,7 +18,6 @@ export function hasImage(file: string | undefined): boolean {
 
 /** Expected photos and what each should show (used for placeholders + README). */
 export const photoBriefs: Record<string, string> = {
-  "logo.png": "the round aqua GD badge",
   "georgia.jpg": "a portrait of Georgia",
   "stack-6mm-gold.jpg": "the chunky 6mm gold stack",
   "stack-4mm-silver.jpg": "the petite 4mm silver stack",

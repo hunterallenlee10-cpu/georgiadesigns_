@@ -2,7 +2,7 @@ import Link from "next/link";
 import { InstagramLogo } from "@phosphor-icons/react/dist/ssr";
 import { footerNav, site } from "@/data/site";
 import { getToday } from "@/lib/today";
-import { LogoBadge } from "@/components/ui/Badge";
+import { Logo } from "@/components/ui/Badge";
 import { HomeLink } from "./HomeLink";
 
 export async function Footer() {
@@ -16,9 +16,8 @@ export async function Footer() {
       />
       <div className="container-site grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">
-          <HomeLink className="inline-flex items-center gap-3">
-            <LogoBadge size={52} />
-            <span className="font-serif text-3xl italic">georgia designs</span>
+          <HomeLink className="inline-block">
+            <Logo size={128} />
           </HomeLink>
           <p className="mt-5 text-ink-soft">
             Handmade beaded bracelets by Georgia, strung in Chapel Hill and High Point, NC since {site.since}.
