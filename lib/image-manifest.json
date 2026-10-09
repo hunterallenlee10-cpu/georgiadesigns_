@@ -59,6 +59,16 @@
     "height": 926,
     "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAgCdASoMABAAA4BaJQBOgBuLWzWjc0dAAP2gG8Ra0m9oec/UW2iqEQBJiHM1qRfHjxAl/1qgAA=="
   },
+  "logo-gd.png": {
+    "width": 256,
+    "height": 256,
+    "blur": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4WAoAAAAQAAAACwAACwAAQUxQSHcAAAANcFvbthJdNHN3ioCQkKmaeHyqcHdXvIeImADaCFtxQIzb6WihO+Jp/sgERzwtIoF5/DPwtvE7JafHP8tAMKYuxfMsQ5U17eCeoV7gCDQBY0FoOF86ls3WfJaLVNJNhkD2Xa4Pw/NPt3hc52uCW87Pks3hsthzDABWUDggTAAAAPABAJ0BKgwADAADgFolnAAC60jC6jhAAAD9AMO2XDGvxXJE4fHaRpWMTH5hM/UHS98S5Xyq1+qY3nEZ80qmtLLkEw4886Xy98+AAAA="
+  },
+  "logo.png": {
+    "width": 635,
+    "height": 635,
+    "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoMAAwAA4BaJbACdADb/yu44gAA/u3nQvR3WDXwRSdr7d/HJScEYijpNDjfpgfSS+KQiSLAAAA="
+  },
   "market-table.jpg": {
     "width": 690,
     "height": 926,

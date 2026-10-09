@@ -6,7 +6,7 @@ import { useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { InstagramLogo, List } from "@phosphor-icons/react";
 import { nav, site } from "@/data/site";
-import { LogoBadge } from "@/components/ui/Badge";
+import { Logo } from "@/components/ui/Badge";
 import { BeadDivider } from "@/components/ui/BeadDivider";
 import { Drawer } from "@/components/ui/Drawer";
 import { useCart } from "@/components/cart/CartProvider";
@@ -14,11 +14,8 @@ import { HomeLink } from "./HomeLink";
 
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
-    <span className={`flex items-center gap-2.5 ${className}`}>
-      <span className="hidden sm:block">
-        <LogoBadge size={38} />
-      </span>
-      <span className="font-serif text-[1.4rem] italic sm:text-[1.55rem] leading-none tracking-[-0.01em]">georgia designs</span>
+    <span className={`flex items-center ${className}`}>
+      <Logo size={68} priority className="size-[56px] sm:size-[68px]" />
     </span>
   );
 }
@@ -48,7 +45,7 @@ export function Header() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="container-site flex h-[68px] items-center justify-between gap-6">
+        <div className="container-site flex h-[68px] items-center justify-between gap-6 sm:h-[80px]">
           <HomeLink className="shrink-0">
             <Wordmark />
           </HomeLink>

@@ -10,11 +10,13 @@ const GOLD = "radial-gradient(circle at 35% 30%, #fff7da 0%, #edcf7a 28%, #c9a24
 const PEARL = "radial-gradient(circle at 36% 32%, #ffffff 0%, #fbf5ea 40%, #e8dcc6 78%, #b9ab90 100%)";
 
 export default async function OgImage() {
-  const [serif, serifItalic, sans] = await Promise.all([
+  const [serif, serifItalic, sans, logo] = await Promise.all([
     readFile(join(process.cwd(), "assets/fonts/CormorantGaramond-Medium.ttf")),
     readFile(join(process.cwd(), "assets/fonts/CormorantGaramond-MediumItalic.ttf")),
     readFile(join(process.cwd(), "assets/fonts/DMSans-Regular.ttf")),
+    readFile(join(process.cwd(), "public/images/logo.png")),
   ]);
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
 
   // a ring of beads drawn with absolutely positioned circles
   const beads = Array.from({ length: 30 }, (_, i) => {
@@ -38,29 +40,13 @@ export default async function OgImage() {
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", flex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-            <div
-              style={{
-                width: 64,
-                height: 64,
-                borderRadius: 999,
-                background: "#4FC3C7",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "Cormorant Italic",
-                fontSize: 30,
-              }}
-            >
-              gd
-            </div>
-            <div style={{ fontFamily: "Cormorant Italic", fontSize: 44 }}>georgia designs</div>
-          </div>
+          {/* Georgia's logo, used as-is */}
+          <img src={logoSrc} width={150} height={150} alt="" style={{ borderRadius: 14 }} />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontFamily: "Cormorant Italic", fontSize: 92, lineHeight: 1 }}>Everyday gold,</div>
             <div style={{ fontFamily: "Cormorant", fontSize: 92, lineHeight: 1.05 }}>stacked your way.</div>
           </div>
-          <div style={{ fontSize: 28, color: "#5A534A" }}>
+          <div style={{ fontSize: 24, color: "#5A534A" }}>
             handmade beaded bracelets · $20 each or any 3 for $50
           </div>
         </div>

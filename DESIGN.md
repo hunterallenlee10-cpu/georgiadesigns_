@@ -19,7 +19,7 @@ The brief names the palette, so this is a brand-mandated palette, not a default 
 | `gold` | `#C9A24A` | beads, numerals in display sizes, focus ring, hairlines. never small text |
 | `gold-soft` | `#E9D7A5` | hover fills, bead highlights |
 | `gold-deep` | `#7C5E17` | gold-toned small text (5.7:1 on cream) |
-| `aqua` | `#4FC3C7` | brand moments only: badge, cart count, order bar. never body text |
+| `aqua` | `#69DAD8` | sampled from Georgia's logo. brand moments only: promo bar, cart count. never body text |
 | `aqua-deep` | `#16696C` | aqua-toned text when needed (6.0:1 on cream) |
 | `bow` | `#F4B6C2` | tiny accents: the bow, the gift toggle |
 | `carolina` | `#7BAFD4` | game-day band only |
@@ -49,6 +49,10 @@ Scale (fluid with `clamp`):
 - 4px base. Section padding `py-20 md:py-28`. Container `max-w-[1320px] px-4 sm:px-6 lg:px-10`.
 - Shape rule: **buttons and chips are full pills; cards and photos are 12px; inputs are 10px.** No other radii.
 - Shadows only on floating layers (drawer, sticky nav once scrolled), tinted warm: `0 10px 40px -12px rgb(91 72 34 / .18)`.
+
+## Logo
+
+Georgia's logo (aqua tile, pearl necklace, "georgia designs" script, GD monogram) is the only brand mark. The source is `assets/brand/georgia-designs-logo.jpg`; `node scripts/make-icons.mjs` builds every size from it. The full logo appears in the header and footer and on the share image; the GD monogram alone is used where the full logo would be too small (browser tab icon, hero seal). Never redraw, recolor or add a text wordmark beside it.
 
 ## Motifs
 
