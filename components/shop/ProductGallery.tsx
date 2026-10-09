@@ -52,7 +52,7 @@ export function ProductGallery({ product }: { product: Product }) {
       {/* mobile: swipe */}
       <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 sm:-mx-6 sm:px-6 lg:hidden" aria-label="product images">
         {slides.map((s, i) => (
-          <li key={i} className="relative aspect-[4/5] w-[86%] shrink-0 snap-center overflow-hidden rounded-[var(--radius-card)] bg-oat">
+          <li key={i} className="relative aspect-[4/5] w-[86%] shrink-0 snap-center sm:w-[58%] overflow-hidden rounded-[var(--radius-card)] bg-oat">
             {render(s, i === 0)}
           </li>
         ))}

@@ -14,7 +14,9 @@ import { useCart } from "@/components/cart/CartProvider";
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span className={`flex items-center gap-2.5 ${className}`}>
-      <LogoBadge size={38} className="hidden sm:inline-flex" />
+      <span className="hidden sm:block">
+        <LogoBadge size={38} />
+      </span>
       <span className="font-serif text-[1.4rem] italic sm:text-[1.55rem] leading-none tracking-[-0.01em]">georgia designs</span>
     </span>
   );
@@ -46,7 +48,7 @@ export function Header() {
         }`}
       >
         <div className="container-site flex h-[68px] items-center justify-between gap-6">
-          <Link href="/" aria-label="georgia designs, home" className="shrink-0">
+          <Link href="/" className="shrink-0">
             <Wordmark />
           </Link>
 

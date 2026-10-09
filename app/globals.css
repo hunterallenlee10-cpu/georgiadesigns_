@@ -98,7 +98,7 @@ body {
   }
   .h3 {
     font-family: var(--font-serif);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.6rem;
     line-height: 1.2;
   }
@@ -184,6 +184,40 @@ body {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* hero entrance (CSS so it runs before hydration) */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+}
+/* the headline only slides (no fade) so it counts as painted immediately */
+@keyframes rise-slide {
+  from {
+    transform: translateY(18px);
+  }
+}
+@keyframes settle {
+  from {
+    transform: scale(1.045);
+  }
+}
+.rise {
+  animation: rise 0.9s var(--ease-out-soft) both;
+}
+.rise-slide {
+  animation: rise-slide 0.9s var(--ease-out-soft) both;
+}
+.settle {
+  animation: settle 1.8s var(--ease-out-soft) both;
+}
+
+/* below-the-fold sections skip rendering work until they approach the viewport */
+.defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
 }
 
 @keyframes spin-slow {

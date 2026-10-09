@@ -32,6 +32,24 @@ export function BeadDefs() {
           <stop offset="78%" stopColor="#E8DCC6" />
           <stop offset="100%" stopColor="#B9AB90" />
         </radialGradient>
+        <radialGradient id="bead-gold-back" cx="34%" cy="30%" r="78%">
+          <stop offset="0%" stopColor="#F3E2B0" />
+          <stop offset="30%" stopColor="#D9B961" />
+          <stop offset="64%" stopColor="#B38D3C" />
+          <stop offset="100%" stopColor="#6A4E15" />
+        </radialGradient>
+        <radialGradient id="bead-silver-back" cx="34%" cy="30%" r="78%">
+          <stop offset="0%" stopColor="#F2F3F5" />
+          <stop offset="32%" stopColor="#D2D6DB" />
+          <stop offset="68%" stopColor="#9AA0A8" />
+          <stop offset="100%" stopColor="#555B63" />
+        </radialGradient>
+        <radialGradient id="bead-pearl-back" cx="36%" cy="32%" r="80%">
+          <stop offset="0%" stopColor="#FBF7EF" />
+          <stop offset="42%" stopColor="#EFE6D6" />
+          <stop offset="80%" stopColor="#D9CBB1" />
+          <stop offset="100%" stopColor="#A89A80" />
+        </radialGradient>
         <linearGradient id="arm-skin" x1="0" x2="1" y1="0" y2="0">
           <stop offset="0%" stopColor="#D7B497" />
           <stop offset="22%" stopColor="#EACFB7" />

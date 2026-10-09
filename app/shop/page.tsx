@@ -16,13 +16,16 @@ export const metadata: Metadata = {
 /** Static fallback: the unfiltered catalog, so the page has content before the filters hydrate. */
 function AllProducts() {
   return (
-    <ul className="grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-5 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-14">
-      {products.map((p) => (
-        <li key={p.slug}>
-          <ProductCard product={p} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <h2 className="sr-only">Bracelets</h2>
+      <ul className="grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-5 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-14">
+        {products.map((p) => (
+          <li key={p.slug}>
+            <ProductCard product={p} />
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
@@ -37,7 +40,8 @@ export default function ShopPage() {
         }
         intro={
           <>
-            Every bracelet is $20, and any 3 are $50. Mix singles, grab a ready-made stack, or{" "}
+            Every bracelet is $20, and any 3 are $50. Mix singles, grab a
+            ready-made stack, or{" "}
             <Link href="/build-your-stack" className="link-underline text-ink">
               build your own
             </Link>

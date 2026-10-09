@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Plus } from "@phosphor-icons/react";
 import type { Product } from "@/data/products";
@@ -21,9 +22,11 @@ export function ProductCard({ product, priority = false }: { product: Product; p
   const main = product.images[0];
   const hasMain = hasImage(main);
   const href = `/shop/${product.slug}`;
+  // the on-wrist drawing is only built when someone hovers, to keep pages light
+  const [showWrist, setShowWrist] = useState(false);
 
   return (
-    <article className="group flex flex-col">
+    <article className="group flex flex-col" onPointerEnter={() => setShowWrist(true)}>
       <Link href={href} tabIndex={-1} aria-hidden="true" className="relative block aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-oat">
         {/* default view: product photo, or the bracelet drawn from data */}
         <div className="absolute inset-0 transition-opacity duration-500 ease-[var(--ease-out-soft)] group-hover:opacity-0">
@@ -49,7 +52,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
             <Photo file={product.wristImage} alt="" sizes="(min-width: 1024px) 24vw, 45vw" />
           ) : (
             <div className="flex h-full items-end justify-center bg-[#efe5d6]">
-              <WristScene bracelets={product.bracelets} animate={false} className="h-[96%] w-auto" />
+              {showWrist && <WristScene bracelets={product.bracelets} animate={false} className="h-[96%] w-auto" />}
             </div>
           )}
         </div>

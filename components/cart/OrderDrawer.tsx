@@ -441,6 +441,9 @@ function Sent({ text, via, onDone }: { text: string; via: "dm" | "email" | "rese
       {via === "email" && (
         <p className="mt-4 max-w-[36ch] text-sm text-ink-soft">Your email app should open with the order filled in. Hit send there.</p>
       )}
+      <p className="mt-6 rounded-full bg-oat px-4 py-2 text-sm text-ink-soft">
+        venmo {site.venmo} · paypal {site.paypal}
+      </p>
       <details className="mt-8 w-full text-left">
         <summary className="cursor-pointer py-2 text-sm text-ink-soft">see your order text</summary>
         <pre className="mt-2 whitespace-pre-wrap rounded-[var(--radius-card)] bg-oat p-4 font-sans text-sm leading-relaxed">{text}</pre>

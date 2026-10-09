@@ -118,7 +118,7 @@ const finishTiles: { label: string; href: string; file: string; alt: string; ske
 
 export function ShopByFinish() {
   return (
-    <section className="py-20 md:py-28" aria-labelledby="finish-title">
+    <section className="defer-render py-20 md:py-28" aria-labelledby="finish-title">
       <div className="container-site">
         <h2 id="finish-title" className="h2">
           Shop by <span className="warm">finish</span>
@@ -161,7 +161,7 @@ export function ShopByFinish() {
 export function Essentials() {
   const items = featuredProducts(8);
   return (
-    <section className="pb-20 md:pb-28" aria-labelledby="essentials-title">
+    <section className="defer-render pb-20 md:pb-28" aria-labelledby="essentials-title">
       <div className="container-site">
         <div className="flex items-end justify-between gap-6">
           <h2 id="essentials-title" className="h2">
@@ -188,7 +188,7 @@ export function Essentials() {
 
 export function WontTarnish() {
   return (
-    <section className="py-20 md:py-28" aria-labelledby="tarnish-title">
+    <section className="defer-render py-20 md:py-28" aria-labelledby="tarnish-title">
       <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-oat lg:col-span-5">
           <Photo
@@ -223,9 +223,9 @@ export function WontTarnish() {
 
 const feed: { file: string; alt: string; ratio: string; tone: Tone; sketch: BraceletSpec[] }[] = [
   { file: "coffee-1.jpg", alt: "An iced latte held by a hand wearing a gold bracelet stack", ratio: "aspect-[4/5]", tone: "latte", sketch: [{ finish: "gold", size: 4 }, { finish: "gold", size: 4 }] },
-  { file: "bow-tee.jpg", alt: "Three gold bracelets on a white tee with a pink bow", ratio: "aspect-square", tone: "blush", sketch: [{ finish: "gold", size: 6 }, { finish: "gold", size: 4 }, { finish: "gold", size: 6 }] },
+  { file: "bow-tee.jpg", alt: "Three gold bracelets on a white tee with a pink bow", ratio: "aspect-[3/4]", tone: "blush", sketch: [{ finish: "gold", size: 6 }, { finish: "gold", size: 4 }, { finish: "gold", size: 6 }] },
   { file: "denim-ring.jpg", alt: "A hand on denim with a gold ring, red nails and a bracelet stack", ratio: "aspect-[3/4]", tone: "denim", sketch: [{ finish: "mixed", size: 4 }, { finish: "gold", size: 6 }] },
-  { file: "plate-gold.jpg", alt: "A pile of gold bracelets on a blue and white chinoiserie plate", ratio: "aspect-square", tone: "china", sketch: [{ finish: "gold", size: 4 }, { finish: "gold", size: 6 }] },
+  { file: "plate-gold.jpg", alt: "A pile of gold bracelets on a blue and white chinoiserie plate", ratio: "aspect-[4/5]", tone: "china", sketch: [{ finish: "gold", size: 4 }, { finish: "gold", size: 6 }] },
   { file: "stack-watch.jpg", alt: "A gold bracelet stack with a vintage gold watch and pearls", ratio: "aspect-[3/4]", tone: "cream", sketch: [{ finish: "pearl-gold", size: 4 }, { finish: "gold", size: 4 }, { finish: "gold", size: 6 }] },
   { file: "disco.jpg", alt: "A colorful bracelet stack on a hand holding a disco ball", ratio: "aspect-[4/5]", tone: "stone", sketch: [{ finish: "silver", size: 6 }, { finish: "pearl-silver", size: 4 }] },
   { file: "coffee-2.jpg", alt: "An iced latte with a gold and pearl stack on the wrist", ratio: "aspect-[4/5]", tone: "latte", sketch: [{ finish: "pearl-gold", size: 4 }, { finish: "gold", size: 6 }] },
@@ -234,7 +234,7 @@ const feed: { file: string; alt: string; ratio: string; tone: Tone; sketch: Brac
 
 export function Feed() {
   return (
-    <section className="bg-oat py-20 md:py-28" aria-labelledby="feed-title">
+    <section className="defer-render bg-oat py-20 md:py-28" aria-labelledby="feed-title">
       <div className="container-site">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -270,13 +270,13 @@ export function Feed() {
 
 export function GameDay() {
   return (
-    <section className="bg-carolina" aria-labelledby="gameday-title">
+    <section className="defer-render bg-carolina" aria-labelledby="gameday-title">
       <div className="container-site grid items-center gap-8 py-14 md:grid-cols-[1.1fr_1fr] md:py-0">
         <div className="md:py-20">
           <h2 id="gameday-title" className="h2 text-ink">
             Game day stack, <span className="warm">tar heels edition</span> 🐏
           </h2>
-          <p className="mt-4 max-w-[42ch] text-lg text-ink">
+          <p className="mt-4 max-w-[48ch] text-lg text-ink">
             Gold and pearls with your jersey, for kickoff or tip-off. Go heels.
           </p>
           <ButtonLink href="/build-your-stack?s=pg4.g6.s4" variant="primary" className="mt-8">
@@ -305,7 +305,7 @@ export function GameDay() {
 
 export function Gifting() {
   return (
-    <section className="py-20 md:py-28" aria-labelledby="gift-title">
+    <section className="defer-render py-20 md:py-28" aria-labelledby="gift-title">
       <div className="container-site flex flex-col items-center text-center">
         <Bow className="w-24" />
         <h2 id="gift-title" className="h2 mt-6 max-w-[20ch]">
@@ -327,7 +327,7 @@ export function Gifting() {
 export function FounderNote() {
   const portrait = hasImage("georgia.jpg") ? "georgia.jpg" : "market-table.jpg";
   return (
-    <section className="bg-oat py-20 md:py-28" aria-labelledby="founder-title">
+    <section className="defer-render bg-oat py-20 md:py-28" aria-labelledby="founder-title">
       <div className="container-site grid items-center gap-12 md:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <BubbleRing className="mx-auto w-full max-w-[440px]">
           <Photo
@@ -374,7 +374,7 @@ export async function CommunityRow() {
   const today = await getToday();
   const next = splitEvents(today).upcoming[0];
   return (
-    <section className="py-20 md:py-28" aria-label="community">
+    <section className="defer-render py-20 md:py-28" aria-label="community">
       <div className="container-site grid gap-5 md:grid-cols-2">
         <div className="flex flex-col rounded-[var(--radius-card)] border border-line bg-paper p-7 sm:p-10">
           <h2 className="h3">Giving back</h2>
@@ -425,7 +425,7 @@ export async function CommunityRow() {
 
 export function WholesaleTeaser() {
   return (
-    <section className="pb-20 md:pb-28" aria-labelledby="wholesale-title">
+    <section className="defer-render pb-20 md:pb-28" aria-labelledby="wholesale-title">
       <div className="container-site">
         <Link
           href="/wholesale"

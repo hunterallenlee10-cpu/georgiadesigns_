@@ -15,7 +15,7 @@ export async function Footer() {
       />
       <div className="container-site grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">
-          <Link href="/" className="inline-flex items-center gap-3" aria-label="georgia designs, home">
+          <Link href="/" className="inline-flex items-center gap-3">
             <LogoBadge size={52} />
             <span className="font-serif text-3xl italic">georgia designs</span>
           </Link>

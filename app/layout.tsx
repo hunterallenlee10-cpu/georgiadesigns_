@@ -13,7 +13,7 @@ import { JsonLd } from "@/components/JsonLd";
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: "500",
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -29,6 +29,8 @@ const pinyon = Pinyon_Script({
   subsets: ["latin"],
   weight: "400",
   display: "swap",
+  // only used for the sign-off, below the fold
+  preload: false,
 });
 
 export const metadata: Metadata = {
