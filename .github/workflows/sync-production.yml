@@ -1,0 +1,35 @@
+# Vercel's production branch for this project is `claude/nice-goldberg-5br4td`
+# (it was the repo's only branch when Vercel was connected). Rather than
+# change that setting, this workflow fast-forwards that branch to `main`
+# after every push, so anything merged into `main` goes live automatically.
+#
+# It only fast-forwards: if someone commits directly to the production branch
+# and the two diverge, the job fails instead of overwriting anything.
+#
+# To retire this: set Vercel → Settings → Environments → Production →
+# Branch Tracking to `main`, then delete this file.
+
+name: Sync main to Vercel production branch
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-production
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Fast-forward the production branch to main
+        run: git push origin HEAD:refs/heads/claude/nice-goldberg-5br4td
