@@ -12,6 +12,7 @@ import {
   WontTarnish,
 } from "@/components/home/Sections";
 import { BeadDivider } from "@/components/ui/BeadDivider";
+import { HolidayOrnaments } from "@/components/photos/HolidayOrnaments";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <Feed />
       <GameDay />
       <Gifting />
+      <HolidayOrnaments />
       <FounderNote />
       <CommunityRow />
       <WholesaleTeaser />

@@ -44,27 +44,36 @@ All content lives in typed files under `data/`:
 
 ## Photos
 
-`public/images/` holds 21 photos from @georgiadesigns_, cut out of Instagram grid screenshots and upscaled 2×. They are screenshot quality (about 350px wide before upscaling), so **swap in Georgia's original files when you can**: save an original over the same file name and run `npm run images` (or restart `npm run dev`). The build scans the folder (`scripts/scan-images.mjs`), adds blur-up previews, and serves AVIF/WebP through `next/image`.
+> These photos belong to Georgia Designs and are licensed for this site only. Don't reuse them in other projects or templates.
 
-| file | shows | used on |
+### Georgia's originals (`public/images/georgia/`)
+
+38 photos from `georgia-designs-photos.zip`, each built as **AVIF + WebP at 400, 800 and 1440px** (the originals are 1440px wide, so the 1600 size is capped at 1440 rather than upscaled). The zip and the full-size JPEGs are never committed (`.gitignore` blocks `*.zip` and `georgia-designs-NN.jpg`).
+
+- **One manifest:** `data/photos.json` holds every photo's id, source file, category, alt text, width/height, and the `placements` (hero, founder, about, holiday, instagram). Change a placement or alt text there and every page follows. `lib/photos.ts` is the typed reader.
+- **Rebuild:** `npm run photos -- path/to/georgia-designs-photos.zip` (or a folder of the JPEGs). It unzips into the OS temp folder, writes the variants, and fills in width/height.
+- **Rendering:** `components/ui/GeorgiaPhoto.tsx` outputs `<picture>` with AVIF/WebP `srcset` + `sizes`, explicit width/height (no layout shift), `loading="lazy"` everywhere except the hero, which is the only preloaded image.
+
+| category | files | where it appears |
 |---|---|---|
-| `hero.jpg` | gold, silver & pearl stack on a wrist, cream knit sweater | home hero |
-| `bow-tee.jpg` | three gold bracelets on a pink bow tee | The Everyday Stack |
-| `plate-gold.jpg` | gold bracelets on a chinoiserie plate | The Essential: 4mm Gold, gold tile |
-| `stack-pink-shirt.jpg` | pearl & gold stack, pink shirt | Pearl & Gold |
-| `stack-art.jpg` | chunky gold & pearl stack, navy nails | The Pearl Party Stack |
-| `stack-pearl-mixed.jpg` | gold, silver & pearl stack, grey sleeve | The Mixed Metals Stack |
-| `stack-stripes.jpg` | gold & silver stack, striped pants | Mixed Metals, mixed metals tile |
-| `handful-pearls.jpg` | a handful of pearl & gold bracelets | pearl tile, founder note |
-| `beads-flatlay.jpg` | beads in boxes, finished bracelets, blue pouches | silver tile, "won't tarnish" |
-| `market-table.jpg` | her market table with the aqua GD cards | wholesale, about |
-| `gameday-unc.jpg` | stacks with UNC jerseys | game day |
-| `bazaar-2024-flyer.jpg` | 2024 Carolina Christmas Bazaar flyer | events |
-| `coffee-1/2/3.jpg`, `denim-ring.jpg`, `disco.jpg`, `stack-watch*.jpg`, `denim-jacket-unc.jpg` | lifestyle shots | the "styled by you" grid, product hover photos |
+| gold & silver stacks | `gold-stack-01` … `10` | home hero (01), founder note (09), product cards and galleries, collections, Instagram strip |
+| chinoiserie | `chinoiserie-stack-01` … `05` | shop collections (light navy band), Instagram strip |
+| heishi & clay | `heishi-stack-01` … `04` | shop collections, Instagram strip |
+| stone & glass | `stone-stack-01` … `07` | shop collections, Instagram strip |
+| wood & shell | `neutral-stack-01` … `05` | shop collections, about page, Instagram strip |
+| necklaces | `necklace-01` … `03` | shop collections |
+| styled | `styled-01` | about page |
+| ornaments | `ornament-01` … `03` | home holiday banner |
 
-**Still missing** (the site draws the bracelets or shows a labeled placeholder until these exist): `logo.png` (her GD badge), `georgia.jpg` (optional portrait), `stack-6mm-gold.jpg` (The Chunky Stack), `stack-4mm-silver.jpg` (The Petite Silver Stack), photos for the silver, 6mm and pearl & silver singles, and `archive-1.jpg` to `archive-4.jpg` (older gemstone and tassel pieces for the About timeline).
+The Instagram strip sits above the footer on every page except home (home already has the "styled by you" grid) and links to @georgiadesigns_. Nothing is loaded from Instagram.
 
-Product photos are set per product in `data/products.ts` (`images` for the main photo, `wristImage` for the hover photo). Photo alt text lives in `components/shop/ProductCard.tsx` (`photoAlts`) and next to each photo on the page.
+Category notes vs. the original guide: **03** (pastel stone beads in a palm) is filed under stone & glass, not heishi; **12** is gold-only and **07** is silver, both kept with the gold & silver stacks.
+
+### Earlier screenshot crops (`public/images/*.jpg`)
+
+21 photos cut from Instagram grid screenshots before the originals arrived. They still fill spots the zip doesn't cover (the 2024 bazaar flyer, the market table, the UNC game day photo, the "styled by you" grid, shop-by-finish tiles). They're lower resolution; swap or remove them once Georgia sends originals for those shots. `npm run images` rescans this folder.
+
+**Still missing:** `logo.png` (her GD badge), `georgia.jpg` (optional portrait), and `archive-1.jpg` to `archive-4.jpg` (older gemstone and tassel pieces for the About timeline).
 
 ## Deploy to Vercel
 
@@ -104,8 +113,10 @@ Nothing below was invented as fact; each item is a draft or placeholder that nee
 **Brand assets & permissions**
 - [ ] Logo file (`public/images/logo.png`). Until then the site uses a plain "gd" type badge, not a redrawn logo
 - [ ] Favicon / app icons: `app/icon.svg` is a placeholder "gd" monogram. Replace with her GD mark, then run `node scripts/make-icons.mjs`
-- [ ] Permission to use the 21 Instagram photos now on the site (some show friends and customers), and original full-resolution files to replace the screenshot crops
-- [ ] Photo-to-product matches in `data/products.ts` (e.g. which photo shows the Mixed Metals single)
+- [x] Permission to use her Instagram photos on this site (confirmed)
+- [ ] Original files for the 21 screenshot crops still in `public/images/` (bazaar flyer, market table, game day, coffee shots)
+- [ ] Photo-to-product matches in `data/products.ts` (`photo` / `wristPhoto`), e.g. which photo shows the Mixed Metals single
+- [ ] The shop "collections" (chinoiserie, heishi, stone, wood & shell, necklaces, ornaments) are photo-only with a DM link; add products and prices if she sells them now
 - [ ] OK to mention Gracie Lou and UNC on the site
 
 **Products** (`data/products.ts`)

@@ -11,6 +11,7 @@ import { Accordion } from "@/components/ui/Accordion";
 import { JsonLd } from "@/components/JsonLd";
 import { describeBracelet, finishLabel } from "@/lib/beads";
 import { formatPrice } from "@/lib/pricing";
+import { getPhoto, photoSrc } from "@/lib/photos";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -53,7 +54,11 @@ export default async function ProductPage({ params }: PageProps<"/shop/[slug]">)
     description: p.description,
     sku: p.slug,
     brand: { "@type": "Brand", name: site.legalName },
-    image: p.images.length ? p.images.map((f) => `${site.url}/images/${f}`) : [`${site.url}/opengraph-image`],
+    image: getPhoto(p.photo)
+      ? [`${site.url}${photoSrc(getPhoto(p.photo)!, getPhoto(p.photo)!.widths.at(-1)!, "webp")}`]
+      : p.images.length
+        ? p.images.map((f) => `${site.url}/images/${f}`)
+        : [`${site.url}/opengraph-image`],
     url: `${site.url}/shop/${p.slug}`,
     offers: {
       "@type": "Offer",

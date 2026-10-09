@@ -11,6 +11,7 @@
 import type { BraceletSpec, Finish } from "@/lib/beads";
 import { listPrice } from "@/lib/pricing";
 import { hasImage } from "@/lib/images";
+import { getPhoto } from "@/lib/photos";
 
 export type ProductType = "single" | "stack";
 export type MetalFilter = Finish;
@@ -32,6 +33,10 @@ export interface Product {
   images: string[];
   /** on-wrist photo used for the hover swap */
   wristImage?: string;
+  /** id of an original photo in data/photos.json; preferred over `images` when present */
+  photo?: string;
+  /** id of an original photo for the hover swap; preferred over `wristImage` */
+  wristPhoto?: string;
   /** lower = earlier in "featured" sort. null = not featured on home */
   featured: number | null;
 }
@@ -49,6 +54,7 @@ export const products: Product[] = [
       "Small 4mm gold beads, dainty & perfect for everyday. They sit close to the wrist and stack with everything: your watch, your rings, your other favs.",
     images: ["plate-gold.jpg"],
     wristImage: "denim-ring.jpg",
+    wristPhoto: "gold-stack-08",
     featured: 1,
   },
   {
@@ -101,6 +107,8 @@ export const products: Product[] = [
     description:
       "Gold and silver beads on one strand. It ties a mixed stack together and goes with every ring you own.",
     images: ["stack-stripes.jpg"],
+    photo: "gold-stack-04",
+    wristPhoto: "gold-stack-03",
     featured: 5,
   },
   {
@@ -115,6 +123,8 @@ export const products: Product[] = [
       "Creamy pearls between little gold beads. A sweet one for game days, brunch, and everything in between.",
     images: ["stack-pink-shirt.jpg"],
     wristImage: "coffee-1.jpg",
+    photo: "gold-stack-06",
+    wristPhoto: "gold-stack-07",
     featured: 2,
   },
   {
@@ -145,6 +155,7 @@ export const products: Product[] = [
       "Three petite 4mm gold strands. So dainty & perfect for everyday, and the easiest way to start an arm party.",
     images: ["bow-tee.jpg"],
     wristImage: "stack-watch.jpg",
+    wristPhoto: "gold-stack-08",
     featured: 0,
   },
   {
@@ -162,6 +173,8 @@ export const products: Product[] = [
     description:
       "Three chunky 6mm gold strands. A cute & classy statement for everyday, stacked and ready to go.",
     images: [],
+    photo: "gold-stack-02",
+    wristPhoto: "gold-stack-04",
     featured: 7,
   },
   {
@@ -178,6 +191,7 @@ export const products: Product[] = [
     short: "3 × 4mm silver",
     description: "Three petite 4mm silver strands for the silver girls. Dainty, bright, everyday.",
     images: [],
+    photo: "gold-stack-10",
     featured: null,
   },
   {
@@ -196,6 +210,8 @@ export const products: Product[] = [
       "A chunky gold strand, a mixed metals strand and a petite silver one. Mix & match your favs, already done for you.",
     images: ["stack-pearl-mixed.jpg"],
     wristImage: "stack-watch-denim.jpg",
+    photo: "gold-stack-03",
+    wristPhoto: "gold-stack-09",
     featured: 4,
   },
   {
@@ -214,6 +230,8 @@ export const products: Product[] = [
       "Pearl & gold, chunky gold and petite gold together. Arm party all day, every day.",
     images: ["stack-art.jpg"],
     wristImage: "stack-watch-floral.jpg",
+    photo: "gold-stack-05",
+    wristPhoto: "gold-stack-01",
     featured: 3,
   },
 ];
@@ -222,13 +240,18 @@ export function productPrice(p: Product) {
   return listPrice(p.bracelets.length);
 }
 
+/** True when a product has a real photo (an original or a file in /public/images). */
+export function productHasPhoto(p: Product) {
+  return Boolean(getPhoto(p.photo)) || p.images.some((f) => hasImage(f));
+}
+
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
 }
 
 export function featuredProducts(limit = 8, { withPhotos = false } = {}) {
   return products
-    .filter((p) => p.featured !== null && (!withPhotos || p.images.some((f) => hasImage(f))))
+    .filter((p) => p.featured !== null && (!withPhotos || productHasPhoto(p)))
     .sort((a, b) => (a.featured ?? 99) - (b.featured ?? 99))
     .slice(0, limit);
 }

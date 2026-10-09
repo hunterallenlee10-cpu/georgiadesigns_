@@ -15,6 +15,9 @@
   --color-aqua-deep: #16696c;
   --color-bow: #f4b6c2;
   --color-carolina: #7bafd4;
+  /* light navy, only for the chinoiserie collection */
+  --color-navy: #2f4a78;
+  --color-navy-soft: #edf1f7;
   --color-skin: #e9cdb4;
 
   --radius-card: 12px;

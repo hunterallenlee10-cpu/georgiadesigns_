@@ -8,6 +8,8 @@ import { productPrice } from "@/data/products";
 import { formatPrice } from "@/lib/pricing";
 import { hasImage } from "@/lib/images";
 import { Photo } from "@/components/ui/Photo";
+import { GeorgiaPhoto } from "@/components/ui/GeorgiaPhoto";
+import { getPhoto } from "@/lib/photos";
 import { BraceletArt } from "@/components/beads/BraceletArt";
 import { WristScene } from "@/components/beads/WristScene";
 import { useCart } from "@/components/cart/CartProvider";
@@ -36,6 +38,9 @@ export function ProductCard({ product, priority = false }: { product: Product; p
   const price = productPrice(product);
   const main = product.images[0];
   const hasMain = hasImage(main);
+  const original = getPhoto(product.photo);
+  const wristOriginal = getPhoto(product.wristPhoto);
+  const cardSizes = "(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 75vw";
   const href = `/shop/${product.slug}`;
   // the on-wrist drawing is only built when someone hovers, to keep pages light
   const [showWrist, setShowWrist] = useState(false);
@@ -45,7 +50,9 @@ export function ProductCard({ product, priority = false }: { product: Product; p
       <Link href={href} tabIndex={-1} aria-hidden="true" className="relative block aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-oat">
         {/* default view: product photo, or the bracelet drawn from data */}
         <div className="absolute inset-0 transition-opacity duration-500 ease-[var(--ease-out-soft)] group-hover:opacity-0">
-          {hasMain ? (
+          {original ? (
+            <GeorgiaPhoto photo={original} fill sizes={cardSizes} priority={priority} />
+          ) : hasMain ? (
             <Photo
               file={main}
               alt={photoAlts[main] ?? productAlt(product)}
@@ -63,7 +70,9 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           aria-hidden="true"
           className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-[var(--ease-out-soft)] group-hover:opacity-100"
         >
-          {hasImage(product.wristImage) ? (
+          {wristOriginal ? (
+            <GeorgiaPhoto photo={wristOriginal} fill sizes={cardSizes} />
+          ) : hasImage(product.wristImage) ? (
             <Photo file={product.wristImage} alt="" sizes="(min-width: 1024px) 24vw, 45vw" />
           ) : (
             <div className="flex h-full items-end justify-center bg-[#efe5d6]">

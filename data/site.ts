@@ -43,6 +43,7 @@ export const footerNav = [
     links: [
       { href: "/shop", label: "all bracelets" },
       { href: "/shop?type=stack", label: "stacks of three" },
+      { href: "/shop#collections", label: "collections" },
       { href: "/build-your-stack", label: "build your stack" },
       { href: "/care", label: "care & sizing" },
     ],

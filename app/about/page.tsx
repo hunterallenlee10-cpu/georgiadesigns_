@@ -5,6 +5,8 @@ import { BubbleRing } from "@/components/ui/Ornaments";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { hasImage } from "@/lib/images";
+import { placement } from "@/lib/photos";
+import { GeorgiaPhoto } from "@/components/ui/GeorgiaPhoto";
 
 export const metadata: Metadata = {
   title: "Our story",
@@ -62,6 +64,7 @@ const archive = [
 
 export default function AboutPage() {
   const portrait = hasImage("georgia.jpg") ? "georgia.jpg" : "market-table.jpg";
+  const lifestyle = placement("about").slice(0, 2);
   return (
     <>
       <PageHeader
@@ -77,6 +80,7 @@ export default function AboutPage() {
           <Photo
             file={portrait}
             round
+            priority
             alt={
               portrait === "georgia.jpg"
                 ? "Georgia, the maker behind georgia designs"
@@ -105,6 +109,20 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      {lifestyle.length > 0 && (
+        <section aria-label="georgia designs, worn" className="container-site pb-20">
+          <ul className={`grid gap-4 sm:gap-6 ${lifestyle.length > 1 ? "grid-cols-2" : "max-w-xl"}`}>
+            {lifestyle.map((p, i) => (
+              <li key={p.id} className={i === 1 ? "sm:mt-16" : ""}>
+                <div className="overflow-hidden rounded-[var(--radius-card)] bg-oat">
+                  <GeorgiaPhoto photo={p} sizes="(min-width: 1024px) 40vw, 48vw" />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="bg-oat py-20 md:py-28" aria-labelledby="timeline-title">
         <div className="container-site">

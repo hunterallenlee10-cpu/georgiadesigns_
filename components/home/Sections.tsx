@@ -14,6 +14,8 @@ import { site } from "@/data/site";
 import { hasImage } from "@/lib/images";
 import type { BraceletSpec } from "@/lib/beads";
 import { getToday } from "@/lib/today";
+import { placement } from "@/lib/photos";
+import { GeorgiaPhoto } from "@/components/ui/GeorgiaPhoto";
 
 /* ---------- 3 for $50 ---------- */
 
@@ -327,20 +329,25 @@ export function Gifting() {
 
 export function FounderNote() {
   const portrait = hasImage("georgia.jpg") ? "georgia.jpg" : "handful-pearls.jpg";
+  const original = placement("founder");
   return (
     <section className="defer-render bg-oat py-20 md:py-28" aria-labelledby="founder-title">
       <div className="container-site grid items-center gap-12 md:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <BubbleRing className="mx-auto w-full max-w-[440px]">
-          <Photo
-            file={portrait}
-            alt={
-              portrait === "georgia.jpg"
-                ? "Georgia, the maker behind georgia designs"
-                : "A hand full of pearl and gold beaded bracelets over a blue and white striped shirt"
-            }
-            sizes="(min-width: 768px) 40vw, 90vw"
-            round
-          />
+          {original && !hasImage("georgia.jpg") ? (
+            <GeorgiaPhoto photo={original} fill sizes="(min-width: 768px) 36vw, 80vw" />
+          ) : (
+            <Photo
+              file={portrait}
+              alt={
+                portrait === "georgia.jpg"
+                  ? "Georgia, the maker behind georgia designs"
+                  : "A hand full of pearl and gold beaded bracelets over a blue and white striped shirt"
+              }
+              sizes="(min-width: 768px) 40vw, 90vw"
+              round
+            />
+          )}
         </BubbleRing>
         <div>
           <h2 id="founder-title" className="h2">

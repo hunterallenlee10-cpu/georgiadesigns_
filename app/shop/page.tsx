@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { ShopGrid } from "@/components/shop/ShopGrid";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { products } from "@/data/products";
+import { Collections } from "@/components/photos/Collections";
 
 export const metadata: Metadata = {
   title: "Shop handmade beaded bracelets",
@@ -54,6 +55,7 @@ export default function ShopPage() {
           <ShopGrid />
         </Suspense>
       </div>
+      <Collections />
     </>
   );
 }

@@ -8,6 +8,7 @@ import { OrderDrawer } from "@/components/cart/OrderDrawer";
 import { PromoBar } from "@/components/layout/PromoBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { InstagramStrip } from "@/components/photos/InstagramStrip";
 import { JsonLd } from "@/components/JsonLd";
 
 const cormorant = Cormorant_Garamond({
@@ -97,6 +98,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main id="main" className="flex-1">
             {children}
           </main>
+          <InstagramStrip />
           <Footer />
           <OrderDrawer />
         </CartProvider>

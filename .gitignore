@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Georgia Designs photo originals: never commit the zip or full-size JPEGs
+*.zip
+georgia-designs-[0-9]*.jpg

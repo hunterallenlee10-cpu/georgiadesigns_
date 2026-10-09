@@ -4,23 +4,34 @@ import { useState, type MouseEvent } from "react";
 import type { Product } from "@/data/products";
 import { hasImage } from "@/lib/images";
 import { Photo } from "@/components/ui/Photo";
+import { GeorgiaPhoto } from "@/components/ui/GeorgiaPhoto";
+import { getPhoto, type SitePhoto } from "@/lib/photos";
 import { BraceletArt } from "@/components/beads/BraceletArt";
 import { WristScene } from "@/components/beads/WristScene";
 import { photoAlts, productAlt } from "./ProductCard";
 
-type Slide = { kind: "photo"; file: string; alt: string } | { kind: "art" } | { kind: "wrist" };
+type Slide =
+  | { kind: "original"; photo: SitePhoto }
+  | { kind: "photo"; file: string; alt: string }
+  | { kind: "art" }
+  | { kind: "wrist" };
 
 export function ProductGallery({ product }: { product: Product }) {
-  const photos = [...product.images, ...(product.wristImage ? [product.wristImage] : [])].filter(hasImage);
+  const original = getPhoto(product.photo);
+  const wristOriginal = getPhoto(product.wristPhoto);
+  // originals first; the older screenshot crops only fill in where there is no original
+  const screenshots = [...(original ? [] : product.images), ...(wristOriginal ? [] : product.wristImage ? [product.wristImage] : [])].filter(hasImage);
   const slides: Slide[] = [
-    ...photos.map((file, i) => ({
+    ...(original ? [{ kind: "original" as const, photo: original }] : []),
+    ...screenshots.map((file, i) => ({
       kind: "photo" as const,
       file,
       alt: photoAlts[file] ?? (i === 0 ? productAlt(product) : `${product.name} worn on the wrist`),
     })),
+    ...(wristOriginal ? [{ kind: "original" as const, photo: wristOriginal }] : []),
     // the drawing shows the exact beads; the drawn wrist only fills in when there are no photos
     { kind: "art" as const },
-    ...(photos.length ? [] : [{ kind: "wrist" as const }]),
+    ...(original || wristOriginal || screenshots.length ? [] : [{ kind: "wrist" as const }]),
   ];
   const [active, setActive] = useState(0);
 
@@ -31,7 +42,9 @@ export function ProductGallery({ product }: { product: Product }) {
   };
 
   const render = (s: Slide, priority = false) =>
-    s.kind === "photo" ? (
+    s.kind === "original" ? (
+      <GeorgiaPhoto photo={s.photo} fill priority={priority} sizes="(min-width: 1024px) 50vw, 90vw" />
+    ) : s.kind === "photo" ? (
       <Photo file={s.file} alt={s.alt} sizes="(min-width: 1024px) 50vw, 100vw" priority={priority} />
     ) : s.kind === "art" ? (
       <div className="flex h-full items-center justify-center bg-[radial-gradient(110%_80%_at_50%_40%,#fffdf9_0%,#f1e8da_80%)]">

@@ -1,0 +1,558 @@
+{
+  "//": "Georgia Designs photos: licensed for this site only, do not reuse elsewhere. Edit alt/category/placements here, then run `npm run photos -- <zip or folder of originals>` to rebuild public/images/georgia/.",
+  "placements": {
+    "hero": "gold-stack-01",
+    "founder": "gold-stack-09",
+    "about": [
+      "styled-01",
+      "neutral-stack-01"
+    ],
+    "holiday": [
+      "ornament-02",
+      "ornament-01",
+      "ornament-03"
+    ],
+    "instagram": [
+      "gold-stack-08",
+      "chinoiserie-stack-02",
+      "heishi-stack-01",
+      "stone-stack-01",
+      "neutral-stack-04",
+      "gold-stack-07"
+    ]
+  },
+  "photos": [
+    {
+      "id": "gold-stack-01",
+      "source": "georgia-designs-05.jpg",
+      "category": "gold-stack",
+      "alt": "Gold beaded bracelets in a blue-and-white chinoiserie dish on marble, beside a pearl and gold stack on a wrist, a perfume bottle and a cream satin bow",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "gold-stack-02",
+      "source": "georgia-designs-12.jpg",
+      "category": "gold-stack",
+      "alt": "Three chunky gold beaded stretch bracelets on a wrist above a navy and cream rug",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "gold-stack-03",
+      "source": "georgia-designs-01.jpg",
+      "category": "gold-stack",
+      "alt": "Gold and silver beaded stretch bracelets stacked on a wrist with a gray sweater cuff and blue striped pants",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "gold-stack-04",
+      "source": "georgia-designs-08.jpg",
+      "category": "gold-stack",
+      "alt": "Stack of alternating gold and silver beaded bracelets on a wrist resting on a light blue quilt",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "gold-stack-05",
+      "source": "georgia-designs-10.jpg",
+      "category": "gold-stack",
+      "alt": "Pearl and gold beaded bracelets stacked on a wrist with red nails and a gold dome ring, over jeans",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "gold-stack-06",
+      "source": "georgia-designs-11.jpg",
+      "category": "gold-stack",
+      "alt": "Pearl and gold beaded bracelets on a wrist resting on white embroidered cotton, with a pearl ring",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "gold-stack-07",
+      "source": "georgia-designs-09.jpg",
+      "category": "gold-stack",
+      "alt": "Pearl and gold beaded bracelets stacked on a wrist against a green and orange floral top",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "gold-stack-08",
+      "source": "georgia-designs-02.jpg",
+      "category": "gold-stack",
+      "alt": "Stack of gold beaded bracelets on a wrist with red nails, gold rings and a blue stone ring, over a green sweater and jeans",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "gold-stack-09",
+      "source": "georgia-designs-04.jpg",
+      "category": "gold-stack",
+      "alt": "Stack of gold and silver beaded bracelets on a wrist in front of a lit Christmas tree and wrapped presents",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "gold-stack-10",
+      "source": "georgia-designs-07.jpg",
+      "category": "gold-stack",
+      "alt": "Stack of silver beaded stretch bracelets on a wrist with a gray sweatshirt sleeve",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1709,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "chinoiserie-stack-01",
+      "source": "georgia-designs-16.jpg",
+      "category": "chinoiserie-stack",
+      "alt": "Bracelets of wood beads, sea glass, a bamboo bead and blue-and-white chinoiserie porcelain beads on a wrist",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "chinoiserie-stack-02",
+      "source": "georgia-designs-20.jpg",
+      "category": "chinoiserie-stack",
+      "alt": "Stack of acrylic tube bead bracelets in navy, pink, amber and light blue with blue-and-white chinoiserie beads",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "chinoiserie-stack-03",
+      "source": "georgia-designs-23.jpg",
+      "category": "chinoiserie-stack",
+      "alt": "Light blue stone bead bracelets with blue-and-white chinoiserie beads and a blue sea glass bead on a wrist",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "chinoiserie-stack-04",
+      "source": "georgia-designs-24.jpg",
+      "category": "chinoiserie-stack",
+      "alt": "Lavender stone bead bracelets with blue-and-white chinoiserie beads and a blue sea glass bead on a wrist",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "chinoiserie-stack-05",
+      "source": "georgia-designs-25.jpg",
+      "category": "chinoiserie-stack",
+      "alt": "Stack of navy, wood, light blue and clear tube bead bracelets with a blue-and-white chinoiserie bead on a wrist",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "heishi-stack-01",
+      "source": "georgia-designs-32.jpg",
+      "category": "heishi-stack",
+      "alt": "Stack of hot pink, rainbow, coral and navy heishi bracelets with freshwater pearl bracelets and gold tube beads",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "heishi-stack-02",
+      "source": "georgia-designs-22.jpg",
+      "category": "heishi-stack",
+      "alt": "Two hands holding a pile of rainbow heishi clay bead bracelets",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1558,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "heishi-stack-03",
+      "source": "georgia-designs-33.jpg",
+      "category": "heishi-stack",
+      "alt": "Rainbow heishi bracelet stacked with green and blue stone beads, a pearl and brushed gold beads on a wrist",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "heishi-stack-04",
+      "source": "georgia-designs-36.jpg",
+      "category": "heishi-stack",
+      "alt": "Rainbow and orange heishi bracelets stacked with frosted purple glass, sea glass and aqua beads on a wrist",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "stone-stack-01",
+      "source": "georgia-designs-31.jpg",
+      "category": "stone-stack",
+      "alt": "Stack of chunky pale green, clear and lavender stone nugget bracelets on a wrist",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "stone-stack-02",
+      "source": "georgia-designs-27.jpg",
+      "category": "stone-stack",
+      "alt": "Black and white bead bracelets with a gold-edged geode slice on a wrist",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1439,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "stone-stack-03",
+      "source": "georgia-designs-18.jpg",
+      "category": "stone-stack",
+      "alt": "Faceted dark gray bead bracelets stacked with a pink stone slice bracelet edged in gold",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "stone-stack-04",
+      "source": "georgia-designs-28.jpg",
+      "category": "stone-stack",
+      "alt": "Matte blue-green and tan stone bead bracelets stacked on a display roll",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1661,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "stone-stack-05",
+      "source": "georgia-designs-03.jpg",
+      "category": "stone-stack",
+      "alt": "An open palm holding pastel stone bead bracelets with gold spacer beads",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "stone-stack-06",
+      "source": "georgia-designs-30.jpg",
+      "category": "stone-stack",
+      "alt": "Navy bead bracelets with sea glass, patterned bone, wood and gold accent beads, laid flat",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1080,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "stone-stack-07",
+      "source": "georgia-designs-34.jpg",
+      "category": "stone-stack",
+      "alt": "Black and coral bead bracelets with patterned bone and sea glass accent beads, laid flat",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "neutral-stack-01",
+      "source": "georgia-designs-37.jpg",
+      "category": "neutral-stack",
+      "alt": "Wood bead bracelets with cowrie shells, sea glass and gold beads, worn with a white eyelet dress",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "neutral-stack-02",
+      "source": "georgia-designs-19.jpg",
+      "category": "neutral-stack",
+      "alt": "Freshwater pearl bracelets stacked with clear, white and amber acrylic tube bangles, and a pearl ring",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "neutral-stack-03",
+      "source": "georgia-designs-26.jpg",
+      "category": "neutral-stack",
+      "alt": "Stack of white heishi bracelets with gold tube beads on a wrist",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "neutral-stack-04",
+      "source": "georgia-designs-35.jpg",
+      "category": "neutral-stack",
+      "alt": "Wood, bamboo and gold druzy bead bracelets stacked on a wrist above white sneakers",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "neutral-stack-05",
+      "source": "georgia-designs-38.jpg",
+      "category": "neutral-stack",
+      "alt": "Wood bead bracelets with bamboo, blue sea glass and green accent beads, worn with a green floral print dress",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "necklace-01",
+      "source": "georgia-designs-17.jpg",
+      "category": "necklace",
+      "alt": "Wood bead necklace with a dark crescent pendant, laid with amber and navy chinoiserie bead bracelets",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "necklace-02",
+      "source": "georgia-designs-21.jpg",
+      "category": "necklace",
+      "alt": "Wood bead necklace with coconut shell chips and sea glass, beside pink and green bead bracelets",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "necklace-03",
+      "source": "georgia-designs-29.jpg",
+      "category": "necklace",
+      "alt": "White crescent pendants with sparkly pavé caps, laid flat",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1664,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "styled-01",
+      "source": "georgia-designs-06.jpg",
+      "category": "styled",
+      "alt": "Beaded bracelet stacks on both wrists with colorful rings, worn with a white bird-print dress outdoors",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1800,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "ornament-01",
+      "source": "georgia-designs-13.jpg",
+      "category": "ornament",
+      "alt": "Hand-painted dark teal ornament with gold and white brushstrokes and a gold ribbon, hanging on a Christmas tree",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "ornament-02",
+      "source": "georgia-designs-14.jpg",
+      "category": "ornament",
+      "alt": "Hand-painted clear glass angel ornament with a gold halo and blue robe, tied with gold ribbon on a Christmas tree",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    },
+    {
+      "id": "ornament-03",
+      "source": "georgia-designs-15.jpg",
+      "category": "ornament",
+      "alt": "A hand holding a hand-painted glass angel ornament with gold glitter wings and a light blue satin bow",
+      "reviewed": true,
+      "width": 1440,
+      "height": 1440,
+      "widths": [
+        400,
+        800,
+        1440
+      ]
+    }
+  ]
+}

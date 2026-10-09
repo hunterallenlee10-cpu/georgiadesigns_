@@ -4,6 +4,8 @@ import { Photo } from "@/components/ui/Photo";
 import { RotatingSeal } from "@/components/ui/Badge";
 import { WristScene } from "@/components/beads/WristScene";
 import { hasImage } from "@/lib/images";
+import { placement } from "@/lib/photos";
+import { GeorgiaPhoto } from "@/components/ui/GeorgiaPhoto";
 import type { BraceletSpec } from "@/lib/beads";
 
 const heroStack: BraceletSpec[] = [
@@ -17,6 +19,7 @@ const heroStack: BraceletSpec[] = [
 // paints with the first HTML instead of waiting for JavaScript.
 export function Hero() {
   const rise = (delay: number) => ({ style: { animationDelay: `${delay}s` } });
+  const heroPhoto = placement("hero");
 
   return (
     <section className="relative" aria-labelledby="hero-title">
@@ -40,9 +43,16 @@ export function Hero() {
 
         <div className="relative lg:col-span-6">
           <div
-            className="settle relative mx-auto aspect-[4/5] max-h-[calc(100dvh-150px)] w-full overflow-hidden rounded-[var(--radius-card)] bg-oat lg:aspect-auto lg:h-[min(760px,calc(100dvh-150px))]"
+            className={
+              heroPhoto
+                ? "settle relative mx-auto w-full overflow-hidden rounded-[var(--radius-card)] bg-oat lg:max-h-[min(760px,calc(100dvh-150px))]"
+                : "settle relative mx-auto aspect-[4/5] max-h-[calc(100dvh-150px)] w-full overflow-hidden rounded-[var(--radius-card)] bg-oat lg:aspect-auto lg:h-[min(760px,calc(100dvh-150px))]"
+            }
+            style={heroPhoto ? { aspectRatio: `${heroPhoto.width} / ${heroPhoto.height}` } : undefined}
           >
-            {hasImage("hero.jpg") ? (
+            {heroPhoto ? (
+              <GeorgiaPhoto photo={heroPhoto} fill priority sizes="(min-width: 1024px) 50vw, 100vw" />
+            ) : hasImage("hero.jpg") ? (
               <Photo
                 file="hero.jpg"
                 alt="A wrist wearing a stack of gold, silver and pearl beaded bracelets, resting on a cream knit sweater and grey jeans"
