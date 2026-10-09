@@ -10,6 +10,7 @@ import { LogoBadge } from "@/components/ui/Badge";
 import { BeadDivider } from "@/components/ui/BeadDivider";
 import { Drawer } from "@/components/ui/Drawer";
 import { useCart } from "@/components/cart/CartProvider";
+import { HomeLink } from "./HomeLink";
 
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -48,9 +49,9 @@ export function Header() {
         }`}
       >
         <div className="container-site flex h-[68px] items-center justify-between gap-6">
-          <Link href="/" className="shrink-0">
+          <HomeLink className="shrink-0">
             <Wordmark />
-          </Link>
+          </HomeLink>
 
           <nav aria-label="main" className="hidden lg:block">
             <ul className="flex items-center gap-7">
