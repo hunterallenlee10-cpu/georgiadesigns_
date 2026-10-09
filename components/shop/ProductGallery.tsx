@@ -6,7 +6,7 @@ import { hasImage } from "@/lib/images";
 import { Photo } from "@/components/ui/Photo";
 import { BraceletArt } from "@/components/beads/BraceletArt";
 import { WristScene } from "@/components/beads/WristScene";
-import { productAlt } from "./ProductCard";
+import { photoAlts, productAlt } from "./ProductCard";
 
 type Slide = { kind: "photo"; file: string; alt: string } | { kind: "art" } | { kind: "wrist" };
 
@@ -16,11 +16,11 @@ export function ProductGallery({ product }: { product: Product }) {
     ...photos.map((file, i) => ({
       kind: "photo" as const,
       file,
-      alt: i === 0 ? productAlt(product) : `${product.name} worn on the wrist`,
+      alt: photoAlts[file] ?? (i === 0 ? productAlt(product) : `${product.name} worn on the wrist`),
     })),
-    // always include the drawn views so the gallery shows the exact beads
+    // the drawing shows the exact beads; the drawn wrist only fills in when there are no photos
     { kind: "art" as const },
-    { kind: "wrist" as const },
+    ...(photos.length ? [] : [{ kind: "wrist" as const }]),
   ];
   const [active, setActive] = useState(0);
 

@@ -1,1 +1,107 @@
-{}
+{
+  "bazaar-2024-flyer.jpg": {
+    "width": 692,
+    "height": 872,
+    "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoMAA8AA4BaJQBOgB6I4tnwAAD+o3qYs90md1gyJVx5VNhGtEho09angAA="
+  },
+  "beads-flatlay.jpg": {
+    "width": 694,
+    "height": 922,
+    "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoMABAAA4BaJQBOgBuUHXSAAP6zFnv0kUc1jM/VeLZpjoqGXw8/RaRO8AA="
+  },
+  "bow-tee.jpg": {
+    "width": 694,
+    "height": 928,
+    "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoMABAAA4BaJQBOgCP8/DK0bbEAAP7wQJuVYioiLCuKBL5y+RnLaMsSVKwBer1IfGUpDNDg1oAAAA=="
+  },
+  "coffee-1.jpg": {
+    "width": 692,
+    "height": 928,
+    "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAwAgCdASoMABAAA4BaJQBOj+ACucouZ30kgAD+lJIs9IawkLN5y3gQ4FZJDaA0PB7PmvZKgZuHjUyy8bHX0cw4AAA="
+  },
+  "coffee-2.jpg": {
+    "width": 694,
+    "height": 924,
+    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoMABAAA4BaJbACdACwDnBM5cykAP2U5Q6aBShOeP27fAb400X5s4j0H4h7iscOAmE6x5+Li5M1eaOQ7JK943gk/cg3KAAA"
+  },
+  "coffee-3.jpg": {
+    "width": 692,
+    "height": 924,
+    "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwAgCdASoMABAAA4BaJZgCdADcZUsgT8dM2ADbyh6PKmQ1fVPO10n77JJwgC686hhe9d8jmx5C+cmchx65q3NyveS/VaJoqAA="
+  },
+  "denim-jacket-unc.jpg": {
+    "width": 686,
+    "height": 730,
+    "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoMAA0AA4BaJQBOgBcVjx8hIAD84oVjFzYIkhIwVgCArVO8/VbZ18NQ487g5RA/jfQ3tOAA"
+  },
+  "denim-ring.jpg": {
+    "width": 692,
+    "height": 924,
+    "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoMABAAA4BaJYgCdAD0s+dYooAA/qXcausAICTlfb5U15eiscv2sIW3XrmaUpYABcKvjYxpP9YAAA=="
+  },
+  "disco.jpg": {
+    "width": 688,
+    "height": 928,
+    "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoMABAAA4BaJQBWABjK1iRgAP7tzcBezSeMUr0Hr9KneLlnEJ38a3PxVcmDzcfJlAAAAA=="
+  },
+  "gameday-unc.jpg": {
+    "width": 692,
+    "height": 928,
+    "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoMABAAA4BaJbACdAC3kscHBrDQAP7wh755MTLIFvTiMK4y3x51b9hWd6+H3xXwtW3m96uzzzdGX3yAyOo6EAAA"
+  },
+  "handful-pearls.jpg": {
+    "width": 694,
+    "height": 872,
+    "blur": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoMAA8AA4BaJZgCdADcGc56AADiRHM2soUhuDFdVKQs413eC6Q0Zlp0NAAAAA=="
+  },
+  "hero.jpg": {
+    "width": 692,
+    "height": 926,
+    "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAgCdASoMABAAA4BaJQBOgBuLWzWjc0dAAP2gG8Ra0m9oec/UW2iqEQBJiHM1qRfHjxAl/1qgAA=="
+  },
+  "market-table.jpg": {
+    "width": 690,
+    "height": 926,
+    "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoMABAAA4BaJQBOgCBvn674gAD+xDSze2t5bi5vngYMNOLKOHJ7enDrxJXdoX+hgAA="
+  },
+  "plate-gold.jpg": {
+    "width": 694,
+    "height": 928,
+    "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoMABAAA4BaJQBOgBVXPjzjAADhz0b9qTpzGzUtXCWM1sjSt9p0YLdveVInnJUAAAA="
+  },
+  "stack-art.jpg": {
+    "width": 692,
+    "height": 928,
+    "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoMABAAA4BaJZACdABp1uLgAP6azNLFh27Dl66P2XYdvgEKfrEh6PED7qhhY1SnU4+2e0aljwM172xIAAA="
+  },
+  "stack-pearl-mixed.jpg": {
+    "width": 694,
+    "height": 928,
+    "blur": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAAAQAgCdASoMABAAA4BaJZgCdH8AExu3jbBIAP60A31rBTRnehYCoAlLu5tM3r5o+3RAAA=="
+  },
+  "stack-pink-shirt.jpg": {
+    "width": 694,
+    "height": 872,
+    "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoMAA8AA4BaJagCdAEWe86oDl0AAP7F8+PNR50D9YUySBrWHRwTqdkslFlzFdLi4VG4ParXkGCAAA=="
+  },
+  "stack-stripes.jpg": {
+    "width": 694,
+    "height": 924,
+    "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoMABAAA4BaJZACdADWq3LFAAD+L3DzAoenLVhwsqLceFVk9CdiqP49u5H0gELECEDoAA=="
+  },
+  "stack-watch-denim.jpg": {
+    "width": 686,
+    "height": 872,
+    "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoMAA8AA4BaJbACdFQAAsJx0BmAAP7CJWPTj9b5Dx1Mzg/RL5+CHNnTnsILaVq9FbHZK0EKoX0AAA=="
+  },
+  "stack-watch-floral.jpg": {
+    "width": 694,
+    "height": 928,
+    "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAgCdASoMABAAA4BaJaACdAEWNmch056dAAD80vWRr6pe67ty7SQzBcgGvm/I6kgMsy7RcLCoAA=="
+  },
+  "stack-watch.jpg": {
+    "width": 692,
+    "height": 922,
+    "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoMABAAA4BaJZgCdADPQ3vMlIAA/vN7fJm9hvvFAdlNKvFGgjRitzAbKHzSVTLpVqcAAA=="
+  }
+}

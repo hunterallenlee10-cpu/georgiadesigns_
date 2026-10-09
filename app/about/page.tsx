@@ -80,7 +80,7 @@ export default function AboutPage() {
             alt={
               portrait === "georgia.jpg"
                 ? "Georgia, the maker behind georgia designs"
-                : "The georgia designs market table with the aqua GD sign"
+                : "The georgia designs market table: gold and silver bracelets on pillows with aqua GD business cards"
             }
             sizes="(min-width: 768px) 40vw, 90vw"
           />

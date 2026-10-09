@@ -42,33 +42,29 @@ All content lives in typed files under `data/`:
 - **Site settings** (Instagram, contact email, Venmo / PayPal, promo bar): `data/site.ts` and the env vars below.
 - **Pricing rules:** `lib/pricing.ts` (one function, unit tested in `lib/pricing.test.ts`).
 
-## Swapping in photos
+## Photos
 
-Drop files into `public/images/` with these exact names. The build scans the folder (`scripts/scan-images.mjs`) and swaps each placeholder for the real photo, with blur-up previews and AVIF/WebP via `next/image`. Until a photo exists, the site shows a styled placeholder naming the file, or draws the bracelets from data.
+`public/images/` holds 21 photos from @georgiadesigns_, cut out of Instagram grid screenshots and upscaled 2×. They are screenshot quality (about 350px wide before upscaling), so **swap in Georgia's original files when you can**: save an original over the same file name and run `npm run images` (or restart `npm run dev`). The build scans the folder (`scripts/scan-images.mjs`), adds blur-up previews, and serves AVIF/WebP through `next/image`.
 
-| file | what it should show |
-|---|---|
-| `logo.png` | the round aqua GD badge (transparent PNG). Used in the nav, footer and hero seal |
-| `hero.jpg` | wrist with a gold & pearl stack, sweater sleeve, warm light |
-| `stack-pearl-mixed.jpg` | gold, silver & pearl stack, grey sleeve |
-| `stack-watch.jpg` | gold stack with a vintage gold watch and pearls |
-| `stack-6mm-gold.jpg` | chunky 6mm gold stack |
-| `stack-4mm-silver.jpg` | petite 4mm silver stack |
-| `flatlay-table.jpg` | bracelets on burlap with the aqua GD business cards |
-| `handful-pearls.jpg` | a handful of gold & pearl bracelets on a striped shirt |
-| `plate-gold.jpg` | gold bracelets on a blue-and-white chinoiserie plate |
-| `bow-tee.jpg` | three gold bracelets, white tee, pink bow |
-| `coffee-1.jpg`, `coffee-2.jpg` | iced latte with the stack |
-| `denim-ring.jpg` | hand on denim, gold ring, red nails, stack |
-| `gameday-unc.jpg` | the stack with a UNC jersey |
-| `disco.jpg` | colorful stack holding a disco ball |
-| `market-table.jpg` | the bazaar table with the aqua GD sign |
-| `georgia.jpg` | *(optional)* a portrait of Georgia; used instead of the market table in the founder note |
-| `archive-1.jpg` … `archive-4.jpg` | older gemstone, wood & tassel and stone pieces on white marble |
+| file | shows | used on |
+|---|---|---|
+| `hero.jpg` | gold, silver & pearl stack on a wrist, cream knit sweater | home hero |
+| `bow-tee.jpg` | three gold bracelets on a pink bow tee | The Everyday Stack |
+| `plate-gold.jpg` | gold bracelets on a chinoiserie plate | The Essential: 4mm Gold, gold tile |
+| `stack-pink-shirt.jpg` | pearl & gold stack, pink shirt | Pearl & Gold |
+| `stack-art.jpg` | chunky gold & pearl stack, navy nails | The Pearl Party Stack |
+| `stack-pearl-mixed.jpg` | gold, silver & pearl stack, grey sleeve | The Mixed Metals Stack |
+| `stack-stripes.jpg` | gold & silver stack, striped pants | Mixed Metals, mixed metals tile |
+| `handful-pearls.jpg` | a handful of pearl & gold bracelets | pearl tile, founder note |
+| `beads-flatlay.jpg` | beads in boxes, finished bracelets, blue pouches | silver tile, "won't tarnish" |
+| `market-table.jpg` | her market table with the aqua GD cards | wholesale, about |
+| `gameday-unc.jpg` | stacks with UNC jerseys | game day |
+| `bazaar-2024-flyer.jpg` | 2024 Carolina Christmas Bazaar flyer | events |
+| `coffee-1/2/3.jpg`, `denim-ring.jpg`, `disco.jpg`, `stack-watch*.jpg`, `denim-jacket-unc.jpg` | lifestyle shots | the "styled by you" grid, product hover photos |
 
-Product photos are set per product in `data/products.ts` (`images` and `wristImage`).
+**Still missing** (the site draws the bracelets or shows a labeled placeholder until these exist): `logo.png` (her GD badge), `georgia.jpg` (optional portrait), `stack-6mm-gold.jpg` (The Chunky Stack), `stack-4mm-silver.jpg` (The Petite Silver Stack), photos for the silver, 6mm and pearl & silver singles, and `archive-1.jpg` to `archive-4.jpg` (older gemstone and tassel pieces for the About timeline).
 
-After adding photos, run `npm run images` (or just restart `npm run dev`).
+Product photos are set per product in `data/products.ts` (`images` for the main photo, `wristImage` for the hover photo). Photo alt text lives in `components/shop/ProductCard.tsx` (`photoAlts`) and next to each photo on the page.
 
 ## Deploy to Vercel
 
@@ -108,7 +104,8 @@ Nothing below was invented as fact; each item is a draft or placeholder that nee
 **Brand assets & permissions**
 - [ ] Logo file (`public/images/logo.png`). Until then the site uses a plain "gd" type badge, not a redrawn logo
 - [ ] Favicon / app icons: `app/icon.svg` is a placeholder "gd" monogram. Replace with her GD mark, then run `node scripts/make-icons.mjs`
-- [ ] Permission to use each Instagram photo listed above (and any photos of customers)
+- [ ] Permission to use the 21 Instagram photos now on the site (some show friends and customers), and original full-resolution files to replace the screenshot crops
+- [ ] Photo-to-product matches in `data/products.ts` (e.g. which photo shows the Mixed Metals single)
 - [ ] OK to mention Gracie Lou and UNC on the site
 
 **Products** (`data/products.ts`)

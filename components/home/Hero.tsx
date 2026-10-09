@@ -45,9 +45,10 @@ export function Hero() {
             {hasImage("hero.jpg") ? (
               <Photo
                 file="hero.jpg"
-                alt="A wrist wearing a stack of gold and pearl beaded bracelets with a knit sweater sleeve, in warm morning light"
+                alt="A wrist wearing a stack of gold, silver and pearl beaded bracelets, resting on a cream knit sweater and grey jeans"
                 sizes="(min-width: 1024px) 55vw, 100vw"
                 priority
+                imgClassName="object-[50%_22%]"
               />
             ) : (
               <div className="absolute inset-0 flex items-end justify-center bg-[radial-gradient(90%_70%_at_50%_60%,#f7efe2_0%,#ecdfca_60%,#e2d1b6_100%)]">

@@ -23,6 +23,8 @@ export interface SiteEvent {
   description: string;
   host?: string;
   link?: { href: string; label: string };
+  /** optional photo or flyer in /public/images */
+  image?: { file: string; alt: string };
 }
 
 const BAZAAR_ADDRESS = "1225 Chestnut Dr, High Point, NC 27262";
@@ -59,6 +61,10 @@ export const events: SiteEvent[] = [
     name: "Carolina Christmas Bazaar",
     status: "scheduled",
     date: "2024-11-16",
+    image: {
+      file: "bazaar-2024-flyer.jpg",
+      alt: "Flyer for the Carolina Christmas Bazaar, Saturday November 16, 2024, 8am to 3pm at Wesley Memorial in High Point: 75 vendors, free admission and parking",
+    },
     venue: "Wesley Memorial United Methodist Church",
     address: BAZAAR_ADDRESS,
     city: "High Point, NC",

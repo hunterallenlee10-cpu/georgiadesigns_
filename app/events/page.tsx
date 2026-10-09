@@ -6,6 +6,8 @@ import { formatEventDate, splitEvents, type SiteEvent } from "@/data/events";
 import { site } from "@/data/site";
 import { getToday } from "@/lib/today";
 import { eventIcs, icsDataUri, mapsUrl } from "@/lib/ics";
+import { hasImage } from "@/lib/images";
+import { Photo } from "@/components/ui/Photo";
 
 export const metadata: Metadata = {
   title: "Markets & events",
@@ -152,13 +154,18 @@ export default async function EventsPage() {
             {past.map((e) => (
               <li key={e.id} className="flex gap-5 border-b border-line py-6">
                 <DateBadge e={e} />
-                <div>
+                <div className="min-w-0 flex-1">
                   <h3 className="font-medium">{e.name}</h3>
                   <p className="text-sm text-ink-soft">
                     {formatEventDate(e)} · {e.city}
                   </p>
                   <p className="mt-2 text-[0.95rem] text-ink-soft">{e.description}</p>
                 </div>
+                {e.image && hasImage(e.image.file) && (
+                  <div className="relative aspect-[4/5] w-24 shrink-0 overflow-hidden rounded-[10px] bg-cream sm:w-28">
+                    <Photo file={e.image.file} alt={e.image.alt} sizes="112px" />
+                  </div>
+                )}
               </li>
             ))}
           </ul>

@@ -74,7 +74,7 @@ const finishTiles: { label: string; href: string; file: string; alt: string; ske
     label: "gold",
     href: "/shop?metal=gold",
     file: "plate-gold.jpg",
-    alt: "A pile of gold beaded bracelets on a blue and white chinoiserie plate",
+    alt: "A pile of 4mm gold beaded bracelets on a blue and white chinoiserie plate",
     sketch: [
       { finish: "gold", size: 4 },
       { finish: "gold", size: 6 },
@@ -84,8 +84,8 @@ const finishTiles: { label: string; href: string; file: string; alt: string; ske
   {
     label: "silver",
     href: "/shop?metal=silver",
-    file: "stack-4mm-silver.jpg",
-    alt: "A petite stack of silver beaded bracelets on a wrist",
+    file: "beads-flatlay.jpg",
+    alt: "Silver and gold beads in clear boxes next to finished silver and gold bracelets and light blue pouches",
     sketch: [
       { finish: "silver", size: 4 },
       { finish: "silver", size: 6 },
@@ -95,8 +95,8 @@ const finishTiles: { label: string; href: string; file: string; alt: string; ske
   {
     label: "mixed metals",
     href: "/shop?metal=mixed",
-    file: "stack-pearl-mixed.jpg",
-    alt: "A mixed stack of gold, silver and pearl bracelets on a wrist with a grey sleeve",
+    file: "stack-stripes.jpg",
+    alt: "A stack of gold and silver beaded bracelets on a wrist, with striped pants and a grey sweater",
     sketch: [
       { finish: "gold", size: 6 },
       { finish: "mixed", size: 4 },
@@ -107,7 +107,7 @@ const finishTiles: { label: string; href: string; file: string; alt: string; ske
     label: "pearl",
     href: "/shop?metal=pearl-gold,pearl-silver",
     file: "handful-pearls.jpg",
-    alt: "A handful of pearl and gold beaded bracelets on a striped shirt",
+    alt: "A hand full of pearl and gold beaded bracelets over a blue and white striped shirt",
     sketch: [
       { finish: "pearl-gold", size: 4 },
       { finish: "pearl-silver", size: 4 },
@@ -159,7 +159,8 @@ export function ShopByFinish() {
 /* ---------- the essentials ---------- */
 
 export function Essentials() {
-  const items = featuredProducts(8);
+  // lead with the four products that have real photos
+  const items = featuredProducts(4, { withPhotos: true });
   return (
     <section className="defer-render pb-20 md:pb-28" aria-labelledby="essentials-title">
       <div className="container-site">
@@ -192,8 +193,8 @@ export function WontTarnish() {
       <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-oat lg:col-span-5">
           <Photo
-            file="flatlay-table.jpg"
-            alt="Gold and silver beaded bracelets laid out on burlap next to aqua georgia designs business cards"
+            file="beads-flatlay.jpg"
+            alt="Gold and silver beads sorted in clear boxes, with finished stretch bracelets and light blue gift pouches"
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </div>
@@ -222,14 +223,14 @@ export function WontTarnish() {
 /* ---------- the feed ---------- */
 
 const feed: { file: string; alt: string; ratio: string; tone: Tone; sketch: BraceletSpec[] }[] = [
-  { file: "coffee-1.jpg", alt: "An iced latte held by a hand wearing a gold bracelet stack", ratio: "aspect-[4/5]", tone: "latte", sketch: [{ finish: "gold", size: 4 }, { finish: "gold", size: 4 }] },
-  { file: "bow-tee.jpg", alt: "Three gold bracelets on a white tee with a pink bow", ratio: "aspect-[3/4]", tone: "blush", sketch: [{ finish: "gold", size: 6 }, { finish: "gold", size: 4 }, { finish: "gold", size: 6 }] },
-  { file: "denim-ring.jpg", alt: "A hand on denim with a gold ring, red nails and a bracelet stack", ratio: "aspect-[3/4]", tone: "denim", sketch: [{ finish: "mixed", size: 4 }, { finish: "gold", size: 6 }] },
-  { file: "plate-gold.jpg", alt: "A pile of gold bracelets on a blue and white chinoiserie plate", ratio: "aspect-[4/5]", tone: "china", sketch: [{ finish: "gold", size: 4 }, { finish: "gold", size: 6 }] },
-  { file: "stack-watch.jpg", alt: "A gold bracelet stack with a vintage gold watch and pearls", ratio: "aspect-[3/4]", tone: "cream", sketch: [{ finish: "pearl-gold", size: 4 }, { finish: "gold", size: 4 }, { finish: "gold", size: 6 }] },
-  { file: "disco.jpg", alt: "A colorful bracelet stack on a hand holding a disco ball", ratio: "aspect-[4/5]", tone: "stone", sketch: [{ finish: "silver", size: 6 }, { finish: "pearl-silver", size: 4 }] },
-  { file: "coffee-2.jpg", alt: "An iced latte with a gold and pearl stack on the wrist", ratio: "aspect-[4/5]", tone: "latte", sketch: [{ finish: "pearl-gold", size: 4 }, { finish: "gold", size: 6 }] },
-  { file: "handful-pearls.jpg", alt: "A handful of gold and pearl bracelets on a striped shirt", ratio: "aspect-[3/4]", tone: "china", sketch: [{ finish: "pearl-gold", size: 6 }, { finish: "pearl-gold", size: 4 }, { finish: "pearl-silver", size: 4 }] },
+  { file: "coffee-2.jpg", alt: "Two iced coffees on a wooden cafe table with sunglasses and a striped knit, a bracelet stack on the wrist", ratio: "aspect-[4/5]", tone: "latte", sketch: [{ finish: "gold", size: 4 }] },
+  { file: "stack-watch-floral.jpg", alt: "A gold watch with pearl and gold beaded bracelets on a wrist resting on embroidered white cotton", ratio: "aspect-[3/4]", tone: "cream", sketch: [{ finish: "pearl-gold", size: 4 }] },
+  { file: "denim-jacket-unc.jpg", alt: "A denim jacket with Carolina and Pi Beta Phi pins, a gold watch and pearl and gold bracelets at the cuff", ratio: "aspect-[3/4]", tone: "denim", sketch: [{ finish: "pearl-gold", size: 4 }] },
+  { file: "disco.jpg", alt: "A hand with navy nails holding up a mirrored disco ball, wearing a colorful beaded bracelet stack", ratio: "aspect-[4/5]", tone: "stone", sketch: [{ finish: "silver", size: 6 }] },
+  { file: "coffee-3.jpg", alt: "An iced latte held over jeans and red sneakers, with a pearl and gold bracelet on the wrist", ratio: "aspect-[4/5]", tone: "latte", sketch: [{ finish: "pearl-gold", size: 4 }] },
+  { file: "denim-ring.jpg", alt: "A hand with red nails and gold rings wearing a stack of gold beaded bracelets, resting on jeans", ratio: "aspect-[3/4]", tone: "denim", sketch: [{ finish: "gold", size: 4 }] },
+  { file: "stack-watch-denim.jpg", alt: "A gold watch with gold, silver and pearl beaded bracelets on a wrist over jeans", ratio: "aspect-[3/4]", tone: "denim", sketch: [{ finish: "mixed", size: 4 }] },
+  { file: "coffee-1.jpg", alt: "A hand wearing pearl and gold bracelets next to an iced latte in a ribbed glass", ratio: "aspect-[4/5]", tone: "latte", sketch: [{ finish: "pearl-gold", size: 4 }] },
 ];
 
 export function Feed() {
@@ -283,10 +284,10 @@ export function GameDay() {
             Build a game day stack
           </ButtonLink>
         </div>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] md:my-10">
+        <div className="relative aspect-[4/5] w-full max-w-[360px] justify-self-center overflow-hidden rounded-[var(--radius-card)] md:my-12 md:justify-self-end">
           <Photo
             file="gameday-unc.jpg"
-            alt="A gold and pearl bracelet stack worn with a UNC jersey"
+            alt="Two friends in Carolina blue UNC jerseys, wearing gold, silver and pearl beaded bracelets"
             sizes="(min-width: 768px) 45vw, 100vw"
             tone="china"
             sketch={[
@@ -325,7 +326,7 @@ export function Gifting() {
 /* ---------- founder note ---------- */
 
 export function FounderNote() {
-  const portrait = hasImage("georgia.jpg") ? "georgia.jpg" : "market-table.jpg";
+  const portrait = hasImage("georgia.jpg") ? "georgia.jpg" : "handful-pearls.jpg";
   return (
     <section className="defer-render bg-oat py-20 md:py-28" aria-labelledby="founder-title">
       <div className="container-site grid items-center gap-12 md:grid-cols-[0.9fr_1.1fr] lg:gap-20">
@@ -335,7 +336,7 @@ export function FounderNote() {
             alt={
               portrait === "georgia.jpg"
                 ? "Georgia, the maker behind georgia designs"
-                : "The georgia designs table at the Carolina Christmas Bazaar with the aqua GD sign"
+                : "A hand full of pearl and gold beaded bracelets over a blue and white striped shirt"
             }
             sizes="(min-width: 768px) 40vw, 90vw"
             round

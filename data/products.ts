@@ -10,6 +10,7 @@
 
 import type { BraceletSpec, Finish } from "@/lib/beads";
 import { listPrice } from "@/lib/pricing";
+import { hasImage } from "@/lib/images";
 
 export type ProductType = "single" | "stack";
 export type MetalFilter = Finish;
@@ -47,7 +48,7 @@ export const products: Product[] = [
     description:
       "Small 4mm gold beads, dainty & perfect for everyday. They sit close to the wrist and stack with everything: your watch, your rings, your other favs.",
     images: ["plate-gold.jpg"],
-    wristImage: "coffee-1.jpg",
+    wristImage: "denim-ring.jpg",
     featured: 1,
   },
   {
@@ -60,8 +61,8 @@ export const products: Product[] = [
     short: "the dainty everyday, in silver",
     description:
       "Same petite 4mm strand, in silver. Perfect if you wear silver jewelry or want a little contrast in a gold stack.",
-    images: ["stack-4mm-silver.jpg"],
-    featured: 5,
+    images: [],
+    featured: 8,
   },
   {
     slug: "statement-6mm-gold",
@@ -73,9 +74,8 @@ export const products: Product[] = [
     short: "chunky gold, a cute & classy statement",
     description:
       "Bigger 6mm gold beads for a chunkier look. Wear it alone with a watch or as the anchor of your stack.",
-    images: ["stack-6mm-gold.jpg"],
-    wristImage: "stack-watch.jpg",
-    featured: 2,
+    images: [],
+    featured: 6,
   },
   {
     slug: "statement-6mm-silver",
@@ -100,8 +100,8 @@ export const products: Product[] = [
     short: "gold + silver, so you never have to choose",
     description:
       "Gold and silver beads on one strand. It ties a mixed stack together and goes with every ring you own.",
-    images: [],
-    featured: 6,
+    images: ["stack-stripes.jpg"],
+    featured: 5,
   },
   {
     slug: "pearl-and-gold",
@@ -113,8 +113,9 @@ export const products: Product[] = [
     short: "pearls tucked between gold beads",
     description:
       "Creamy pearls between little gold beads. A sweet one for game days, brunch, and everything in between.",
-    images: ["handful-pearls.jpg"],
-    featured: 3,
+    images: ["stack-pink-shirt.jpg"],
+    wristImage: "coffee-1.jpg",
+    featured: 2,
   },
   {
     slug: "pearl-and-silver",
@@ -142,8 +143,8 @@ export const products: Product[] = [
     short: "3 × 4mm gold, so dainty & perfect for everyday",
     description:
       "Three petite 4mm gold strands. So dainty & perfect for everyday, and the easiest way to start an arm party.",
-    images: ["stack-watch.jpg"],
-    wristImage: "coffee-2.jpg",
+    images: ["bow-tee.jpg"],
+    wristImage: "stack-watch.jpg",
     featured: 0,
   },
   {
@@ -160,8 +161,8 @@ export const products: Product[] = [
     short: "3 × 6mm gold, a cute & classy statement",
     description:
       "Three chunky 6mm gold strands. A cute & classy statement for everyday, stacked and ready to go.",
-    images: ["stack-6mm-gold.jpg"],
-    featured: 4,
+    images: [],
+    featured: 7,
   },
   {
     slug: "petite-silver-stack",
@@ -176,7 +177,7 @@ export const products: Product[] = [
     ],
     short: "3 × 4mm silver",
     description: "Three petite 4mm silver strands for the silver girls. Dainty, bright, everyday.",
-    images: ["stack-4mm-silver.jpg"],
+    images: [],
     featured: null,
   },
   {
@@ -193,8 +194,9 @@ export const products: Product[] = [
     short: "gold, silver & a mixed strand",
     description:
       "A chunky gold strand, a mixed metals strand and a petite silver one. Mix & match your favs, already done for you.",
-    images: [],
-    featured: 7,
+    images: ["stack-pearl-mixed.jpg"],
+    wristImage: "stack-watch-denim.jpg",
+    featured: 4,
   },
   {
     slug: "pearl-party-stack",
@@ -210,8 +212,9 @@ export const products: Product[] = [
     short: "pearl & gold with two gold strands",
     description:
       "Pearl & gold, chunky gold and petite gold together. Arm party all day, every day.",
-    images: ["stack-pearl-mixed.jpg"],
-    featured: null,
+    images: ["stack-art.jpg"],
+    wristImage: "stack-watch-floral.jpg",
+    featured: 3,
   },
 ];
 
@@ -223,9 +226,9 @@ export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
 }
 
-export function featuredProducts(limit = 8) {
+export function featuredProducts(limit = 8, { withPhotos = false } = {}) {
   return products
-    .filter((p) => p.featured !== null)
+    .filter((p) => p.featured !== null && (!withPhotos || p.images.some((f) => hasImage(f))))
     .sort((a, b) => (a.featured ?? 99) - (b.featured ?? 99))
     .slice(0, limit);
 }

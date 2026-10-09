@@ -32,10 +32,10 @@ export default function WholesalePage() {
 
       <section className="container-site grid gap-12 pb-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-oat">
+          <div className="relative aspect-[4/5] max-w-[480px] overflow-hidden rounded-[var(--radius-card)] bg-oat">
             <Photo
-              file="flatlay-table.jpg"
-              alt="Gold and silver beaded bracelets laid out with aqua georgia designs business cards"
+              file="market-table.jpg"
+              alt="The georgia designs market table: gold and silver bracelets on pillows and a burlap stand, with aqua GD business cards"
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </div>

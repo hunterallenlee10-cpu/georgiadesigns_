@@ -12,6 +12,21 @@ import { BraceletArt } from "@/components/beads/BraceletArt";
 import { WristScene } from "@/components/beads/WristScene";
 import { useCart } from "@/components/cart/CartProvider";
 
+/** What each real photo shows, used as its alt text. */
+export const photoAlts: Record<string, string> = {
+  "plate-gold.jpg": "A pile of 4mm gold beaded bracelets on a blue and white chinoiserie plate",
+  "denim-ring.jpg": "A hand with red nails and gold rings wearing a stack of gold beaded bracelets, resting on jeans",
+  "stack-stripes.jpg": "A stack of gold and silver beaded bracelets on a wrist, with striped pants and a grey sweater",
+  "stack-pink-shirt.jpg": "Pearl and gold beaded bracelets on a wrist with a pink button-down shirt",
+  "coffee-1.jpg": "A hand wearing pearl and gold bracelets next to an iced latte in a ribbed glass",
+  "bow-tee.jpg": "Three gold beaded bracelets laid on a white tee with a pink bow, next to sneakers",
+  "stack-watch.jpg": "A gold watch stacked with gold, silver and pearl beaded bracelets on a white dress",
+  "stack-pearl-mixed.jpg": "A stack of gold, silver and pearl beaded bracelets on a wrist with a grey sleeve",
+  "stack-watch-denim.jpg": "A gold watch with gold, silver and pearl beaded bracelets on a wrist over jeans",
+  "stack-art.jpg": "A hand with navy nails wearing chunky gold and pearl beaded bracelets in front of a painting",
+  "stack-watch-floral.jpg": "A gold watch with pearl and gold beaded bracelets on a wrist resting on embroidered white cotton",
+};
+
 export function productAlt(p: Product) {
   return `${p.name}: ${p.type === "stack" ? "a stack of three " : ""}handmade beaded bracelet${p.type === "stack" ? "s" : ""}, ${p.short}`;
 }
@@ -33,7 +48,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           {hasMain ? (
             <Photo
               file={main}
-              alt={productAlt(product)}
+              alt={photoAlts[main] ?? productAlt(product)}
               sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 75vw"
               priority={priority}
             />
