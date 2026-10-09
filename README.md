@@ -75,6 +75,10 @@ Category notes vs. the original guide: **03** (pastel stone beads in a palm) is 
 
 **Still missing:** `logo.png` (her GD badge), `georgia.jpg` (optional portrait), and `archive-1.jpg` to `archive-4.jpg` (older gemstone and tassel pieces for the About timeline).
 
+## How the live site updates
+
+Vercel's production branch for this project is `claude/nice-goldberg-5br4td`. The workflow in `.github/workflows/sync-production.yml` fast-forwards that branch to `main` on every push to `main`, so **merging into `main` publishes the site** with no Vercel setting changes. If you later set Vercel's production branch to `main` (Settings → Environments → Production → Branch Tracking), delete that workflow.
+
 ## Deploy to Vercel
 
 1. Push this repo to GitHub and import it at vercel.com/new. Framework preset: Next.js. No build settings to change.
