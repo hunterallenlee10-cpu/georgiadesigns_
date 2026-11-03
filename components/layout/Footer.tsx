@@ -50,9 +50,17 @@ export async function Footer() {
       <div className="border-t border-line">
         <div className="container-site flex flex-col gap-2 py-6 text-sm text-ink-soft sm:flex-row sm:items-center sm:justify-between">
           <p>venmo & paypal accepted. dm for shipping & wholesale.</p>
-          <p>
-            © {year} {site.legalName}
-          </p>
+          <div className="sm:text-right">
+            <p>
+              © {year} {site.legalName}
+            </p>
+            <p className="mt-1 text-xs">
+              Website by{" "}
+              <a href="https://www.leeenterprisesunlimited.com/" target="_blank" rel="noopener" className="hover:text-gold-deep">
+                Lee Enterprises Unlimited
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
